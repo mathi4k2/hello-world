@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head id="#top">
+    <meta charset="utf-8">
+    <title>DIC cafe - Contacto</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/contact.css">
+  </head>
+  <body>
+    <header class="sub_header">
+      <nav class="header_nav">
+        <a class="logo" href="index.html"><img src="images/sample_logo_k.png"></a>
+          <ul class="global_nav">
+            <a class="global_nav_item" href="index.html"><li>Inicio</li></a>
+            <a class="global_nav_item" href="#"><li>Menu</li></a>
+            <a class="global_nav_item" href="contact.html"><li>Contacto</li></a>
+          </ul>
+      </nav>
+    </header>
+    <section class="section_inner">
+      <div class="section_title">
+        <h1>CONTACTO</h1>
+        <p>Contactenos</p>
+      </div>
+      <form action="#" method="POST">
+        <table class="contact">
+          <tr class="contact_line">
+            <td class="contact_sign"><label for="name" class="label">Nombre</label></td>
+            <td class="contact_input"><input type="text" name="name" id="name"></td>
+          </tr>
+          <tr>
+            <td><label for="phonenumber">Numero de telefono</label></td>
+            <td><input type="text" name="phonenumber" id="phonenumber"></td>
+          </tr>
+          <tr>
+            <td><label for="region">Region</label></td>
+            <td><select name="region" id="region">
+                  <option value="">Por favor, seleccione</option>
+                  <option value="1">Hokkaido</option>
+                  <option value="2">Tohoku</option>
+                  <option value="3">Kanto</option>
+                  <option value="4">Region Central</option>
+                  <option value="5">Kinki</option>
+                  <option value="6">Chogoku y Shikoku</option>
+                  <option value="7">Kyushu</option>
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="content">Contenido</label></td>
+            <td><textarea name="content" id="content"></textarea></td>
+          </tr>
+        </table>
+        <button type="reset">Reiniciar</button>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+    <footer class="footer_nav">
+      <nav>
+        <ul class="footer_nav">
+          <a href="index.html" class="footer_nav_item"><li>Inicio</li></a>
+          <a href="#" class="footer_nav_item"><li>Menu</li></a>
+          <a href="contact.html" class="footer_nav_item" class="footer_logo"><li>Contacto</li></a>
+          <a href="index.html" class="footer_nav_item"><img src="images/sample_logo_w.png" alt=""></a>
+        </ul>
+      </nav>
+      <p class="footer_right">&copy; DIVIC Corp. All RIGHTS RESERVED.</p>
+    </footer>
+  </body>
+</html>
