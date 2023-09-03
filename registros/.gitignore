@@ -1,0 +1,51 @@
+# Archivos generados por el sistema operativo
+__pycache__/
+*.pyc
+
+# Directorio virtual environment
+venv/
+
+# Archivos de registro
+*.log
+
+# Archivos de base de datos SQLite
+*.sqlite3
+
+# Archivos de configuración local
+settings_local.py
+
+# Directorio de medios (archivos subidos por usuarios)
+media/
+
+# Directorio de archivos estáticos generados
+staticfiles/
+
+# Archivos de entorno
+.env
+
+# Carpeta de compilación de TypeScript (si se utiliza)
+*.js
+*.js.map
+
+# Carpeta de compilación de SCSS (si se utiliza)
+*.css
+*.css.map
+
+# Carpeta de compilación de Vue.js (si se utiliza)
+/dist/
+
+# Carpeta de dependencias de Node.js (si se utiliza)
+/node_modules/
+
+# Archivos de dependencias de Python (si se utiliza Pipenv)
+Pipfile.lock
+
+# Archivos de dependencias de Python (si se utiliza Pip)
+requirements.txt
+
+# Directorio de capturas de pantalla (eliminar si no es necesario)
+screenshots/
+
+# Carpeta de entorno de desarrollo (por ejemplo, para IDEs)
+.idea/
+.vscode/

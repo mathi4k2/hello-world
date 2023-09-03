@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cliente - Call Center App</title>
+    <!-- Agrega aquí tus enlaces a hojas de estilos (CSS) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Agrega aquí tus enlaces a scripts (JS) si los necesitas -->
+    <script>
+        // Función para obtener la hora y fecha actual y mostrarla en la esquina superior derecha
+        function mostrarHoraFecha() {
+            const fechaActual = new Date();
+            const horaFecha = fechaActual.toLocaleString();
+            document.getElementById('horaFecha').textContent = horaFecha;
+        }
+        setInterval(mostrarHoraFecha, 1000); // Actualiza la hora y fecha cada segundo
+    </script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Call Center App</a>
+        <!-- Aquí puedes agregar más elementos de navegación si lo deseas -->
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Contenido principal de la página -->
+        <div class="row">
+            <!-- Hora y fecha actual en la esquina superior derecha -->
+            <div class="col text-right">
+                <p id="horaFecha"></p>
+            </div>
+        </div>
+        
+        <!-- Formulario de registro de cliente -->
+        <form method="post" action="{% url 'registrar_cliente' %}">
+            {% csrf_token %}
+
+<div class="form-group mt-4">
+    <label for="numero_documento">Número de Documento:</label>
+    <input type="text" class="form-control" id="numero_documento" name="numero_documento">
+</div>
+<div class="form-group mt-4">
+    <label for="nombre">Nombre:</label>
+    <input type="text" class="form-control" id="nombre" name="nombre">
+</div>
+<div class="form-group mt-4">
+    <label for="apellido">Apellido:</label>
+    <input type="text" class="form-control" id="apellido" name="apellido">
+</div>
+<div class="form-group mt-4">
+    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+    <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
+</div>
+<div class="form-group mt-4">
+    <label for="numero_sucursal">Número de Sucursal:</label>
+    <input type="text" class="form-control" id="numero_sucursal" name="numero_sucursal">
+</div>
+<div class="form-group mt-4">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" id="email" name="email">
+</div>
+<div class="form-group mt-4">
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" class="form-control" id="telefono" name="telefono">
+</div>
+<!-- Botón para guardar el registro -->
+<button type="submit" class="btn btn-primary">Registrar</button>
+        <div>
+            <!-- Botón para ir a la página de registros -->
+            <a href="{% url 'casos_registrados' %}" class="btn btn-secondary mt-4">Ir a Registros</a>
+        </div>
+
+    <!-- Agrega aquí tus scripts de JavaScript si los necesitas -->
+    <!-- Bootstrap y otros scripts necesarios -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

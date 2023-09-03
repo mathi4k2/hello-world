@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Casos - Call Center App</title>
+    <!-- Agrega aquí tus enlaces a hojas de estilos (CSS) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Agrega aquí tus enlaces a scripts (JS) si los necesitas -->
+    <script>
+        // ...
+    
+        // Función para buscar un cliente y mostrar la tabla de casos
+        function buscarCliente() {
+            const tipoBusqueda = document.getElementById('tipoBusqueda').value;
+            const clienteSearch = document.getElementById('clienteSearch').value;
+    
+            // Realizar una petición a la vista "casos_registrados" para obtener los casos del cliente
+            fetch(`{% url 'casos_registrados' %}?tipo_busqueda=${tipoBusqueda}&cliente_search=${clienteSearch}`)
+                .then(response => response.json())
+                .then(data => {
+                    const tablaCasos = document.getElementById('tablaCasos');
+                    tablaCasos.innerHTML = ''; // Limpiar la tabla antes de agregar nuevos datos
+                    
+                    // Iterar sobre los casos obtenidos y agregarlos a la tabla
+                    data.forEach(caso => {
+                        const row = tablaCasos.insertRow();
+                        row.innerHTML = `
+                            <td>${caso.numero}</td>
+                            <td>${caso.cliente}</td>
+                            <td>${caso.canal}</td>
+                            <td>${caso.descripcion}</td>
+                            <!-- Agrega más celdas según tus necesidades -->
+                        `;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al buscar casos:', error);
+                });
+        }
+    </script>
+    
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Call Center App</a>
+        <!-- Aquí puedes agregar más elementos de navegación si lo deseas -->
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Contenido principal de la página -->
+        <div class="row">
+            <!-- Hora y fecha actual en la esquina superior derecha -->
+            <div class="col text-right">
+                <p id="horaFecha"></p>
+            </div>
+        </div>
+        
+        <!-- Barra de búsqueda del número de cliente -->
+        <div class="row mt-4">
+            <div class="col-auto">
+                <select class="form-control" id="tipoBusqueda" onchange="cambiarTipoBusqueda()">
+                    <option value="documento">Buscar por número de documento</option>
+                    <option value="cliente">Buscar por número de cliente</option>
+                </select>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="clienteSearch" placeholder="Buscar por número de documento">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary" onclick="buscarCliente()">Buscar</button>
+            </div>
+        </div>
+
+        <!-- Tabla de casos -->
+        <div class="row mt-4">
+            <div class="col">
+                <h3>Casos Registrados</h3>
+                <table class="table" id="tablaCasos">
+                    <thead>
+                        <tr>
+                            <th>Número de Caso</th>
+                            <th>Cliente</th>
+                            <th>Canal</th>
+                            <th>Descripción</th>
+                            <!-- Agrega más columnas según tus necesidades -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se agregarán las filas con los datos de los casos -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Botón para ir a la página de registros -->
+        <a href="{% url 'index' %}" class="btn btn-secondary mt-4">Registrar caso</a>
+        <a href="{% url 'registrar_cliente' %}" class="btn btn-secondary mt-4">Registrar Cliente</a>
+    </div>
+
+    <!-- Agrega aquí tus scripts de JavaScript si los necesitas -->
+    <!-- Bootstrap y otros scripts necesarios -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

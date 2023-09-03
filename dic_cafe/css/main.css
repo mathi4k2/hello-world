@@ -135,7 +135,7 @@ div,li {
 }
 
 .menu-image {
-  width: 55%;
+  width: 20%;
   object-fit: cover;
   margin-right: 10px; /* Cambia el margen derecho para crear espacio entre la imagen y el contenido */
 }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Registro para Call Center</title>
+    <!-- Agrega aquí tus enlaces a hojas de estilos (CSS) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Agrega aquí tus enlaces a scripts (JS) si los necesitas -->
+    <script>
+        // Función para obtener la hora y fecha actual y mostrarla en la esquina superior derecha
+        function mostrarHoraFecha() {
+            const fechaActual = new Date();
+            const horaFecha = fechaActual.toLocaleString();
+            document.getElementById('horaFecha').textContent = horaFecha;
+        }
+        setInterval(mostrarHoraFecha, 1000); // Actualiza la hora y fecha cada segundo
+
+        // Función para cambiar el tipo de búsqueda (por número de documento o número de cliente)
+        function cambiarTipoBusqueda() {
+            const tipoBusqueda = document.getElementById('tipoBusqueda').value;
+            if (tipoBusqueda === 'documento') {
+                document.getElementById('clienteSearch').placeholder = 'Buscar por número de documento';
+            } else if (tipoBusqueda === 'cliente') {
+                document.getElementById('clienteSearch').placeholder = 'Buscar por número de cliente';
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Call Center App</a>
+        <!-- Aquí puedes agregar más elementos de navegación si lo deseas -->
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Contenido principal de la página -->
+        <div class="row">
+            <!-- Hora y fecha actual en la esquina superior derecha -->
+            <div class="col text-right">
+                <p id="horaFecha"></p>
+            </div>
+        </div>
+        
+        <!-- Barra de búsqueda del número de cliente -->
+        <div class="row mt-4">
+            <div class="col-auto">
+                <select class="form-control" id="tipoBusqueda" onchange="cambiarTipoBusqueda()">
+                    <option value="documento">Buscar por número de documento</option>
+                    <option value="cliente">Buscar por número de cliente</option>
+                </select>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="clienteSearch" placeholder="Buscar por número de documento">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary" onclick="buscarCliente()">Buscar</button>
+            </div>
+        </div>
+
+        <!-- Nombre del cliente encontrado después de la búsqueda -->
+        <div class="row mt-2">
+            <div class="col">
+                <p id="nombreCliente"></p>
+            </div>
+        </div>
+
+        <!-- Formulario de registro -->
+        <form>
+            <!-- Lista desplegable para seleccionar el canal de contacto -->
+            <div class="form-group mt-4">
+                <label for="canal">Canal de contacto:</label>
+                <select class="form-control" id="canal">
+                    <option value="telefonica">Telefónica</option>
+                    <option value="presencial">Presencial</option>
+                </select>
+            </div>
+
+            <!-- Campo de texto libre para describir la atención brindada -->
+            <div class="form-group mt-4">
+                <label for="descripcion">Descripción de atención:</label>
+                <textarea class="form-control" id="descripcion" rows="4" maxlength="1000" placeholder="Ingrese la atención brindada"></textarea>
+            </div>
+
+            <!-- Botón para guardar el registro -->
+            <button type="submit" class="btn btn-primary">Guardar Registro</button>
+        </form>
+
+        <!-- Botón para ir a la página de registros -->
+    <!-- Botón para ir a la página de registros -->
+<div>
+    <a href="{% url 'casos_registrados' %}" class="btn btn-secondary mt-4">Ir a Registros</a>
+</div>
+<a href="{% url 'registrar_cliente' %}" class="btn btn-secondary mt-4">Registrar Cliente</a>
+
+    </div>
+
+    <!-- Agrega aquí tus scripts de JavaScript si los necesitas -->
+    <!-- Bootstrap y otros scripts necesarios -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
