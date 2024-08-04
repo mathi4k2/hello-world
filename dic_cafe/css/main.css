@@ -1,0 +1,305 @@
+@charset "utf-8";
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  padding-bottom: 75px;
+  min-height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+div, li {
+  box-sizing: border-box;
+}
+
+.header_nav {
+  background: linear-gradient(90deg, #fff 20%, rgba(0,0,0,.6) 60%);
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: stretch;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.global_nav_item {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.global_nav_item:hover {
+  background: #fff;
+  color: #42210b;
+}
+
+.global_nav {
+  display: flex;
+  align-items: stretch;
+}
+
+.logo {
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.section_inner {
+  padding: 50px 10% 30px;
+}
+
+.key {
+  height: 500px;
+  background: center / cover no-repeat url("../images/sample_key.jpg");
+  font-family: 'Noto Serif JP', serif;
+  font-weight: bold;
+}
+
+.key h1 {
+  font-size: 2.5rem;
+}
+
+.section_title {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.menu_title {
+  display: inline-block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5rem;
+  color: #42210b;
+  border-bottom: solid #42210b 1px;
+  margin-bottom: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.caffee_menu_image {
+  width: 20%;
+  border-radius: 50%;
+  align-items: left;
+}
+
+.visual-key h1,
+.visual-key p {
+  margin-top: 80px;
+  text-align:left;
+}
+
+.concept {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.concept-text {
+  width: 60%;
+}
+
+.concept-images {
+  width: 35%;
+}
+
+.concept-images img {
+  max-width: 100%;
+  height: auto;
+}
+
+#menu {
+  background: center / cover no-repeat url("../images/sample_menu_bg.jpg");
+  background-attachment: fixed;
+  background-position: center bottom;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item.recommended {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  width: 49%;
+}
+
+.menu-item .pricetag {
+  text-align: right;
+  color: brown;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.menu-item:last-child {
+  margin-right: 0;
+}
+
+.menu-image {
+  width: 55%;
+  margin-right: 10px;
+}
+
+.menu-content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-content h2,
+.menu-content p {
+  margin: 0;
+  text-align: left;
+}
+
+.grid-list {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  grid-gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.grid-list .menu-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.grid-list .menu-image {
+  width: 20%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.grid-list .menu-content {
+  width: 80%;
+}
+
+.grid-list .menu-content h2,
+.grid-list .menu-content p {
+  margin: 0;
+  text-align: left;
+}
+
+.grid-list .menu-content .pricetag {
+  text-align: left;
+  color: brown;
+  font-weight: bold;
+}
+
+.access-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.access-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.access-item dt {
+  flex: 1;
+  font-weight: bold;
+  width: 80px;
+}
+
+.access-item dd {
+  flex: 1;
+  margin-left: 80px;
+}
+
+.map-container {
+  width: 100%;
+  height: 450px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.footer {
+  background-color: #251e19;
+  color: white;
+  height: 100px; /* Ajusta la altura según sea necesario */
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra horizontalmente los elementos de la columna */
+  text-align: center;
+  padding: 10px; /* Agrega un poco de padding para un mejor espaciado */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row; /* Coloca los elementos en fila */
+  align-items: center; /* Centra verticalmente los elementos en la fila */
+  justify-content: center; /* Centra horizontalmente los elementos en la fila */
+  width: 100%;
+}
+
+.footer-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  margin-right: 20px; /* Añade margen derecho para separar el menú del logo */
+}
+
+.footer-nav li {
+  margin: 0 20px; /* Ajusta el margen para que los elementos no estén tan juntos */
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-logo img {
+  width: 50px;
+}
+
+.copywrite {
+  margin-top: 10px;
+  width: 100%;
+}
