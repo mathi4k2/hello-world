@@ -20,3 +20,10 @@ branch1/
 dic_cafe1/
 enviroment_1/
 hello-world/
+# Ignorar archivos generales
+*.log
+*.tmp
+*.bak
+
+# Ignorar el directorio de entornos virtuales
+.venv/

@@ -1,0 +1,16 @@
+# Ignorar archivos de compilación y dependencias
+*.pyc
+__pycache__/
+*.log
+*.sqlite3
+
+# Ignorar archivos específicos del entorno
+.env
+.venv/
+
+# Ignorar archivos generados automáticamente
+*.db
+*.bak
+
+# Ignorar carpetas temporales
+temp/
