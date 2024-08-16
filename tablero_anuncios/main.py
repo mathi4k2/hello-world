@@ -4,7 +4,7 @@ def ingresar_evaluacion():
         point = input()
         if point.isdecimal():
             point = int(point)
-            if  point <= 0 or point > 5: 
+            if point <= 0 or point > 5: 
                 print('1から5で入力してください')
             else:
                 print('コメントを入力してください')
@@ -16,12 +16,12 @@ def ingresar_evaluacion():
 
 def guardar_evaluacion(point, comment):
     post = f'ポイント: {point} コメント: {comment}'
-    with open("data.txt", 'a') as file_pc:
-        file_pc.write(f'{ post } \n')
+    with open("data.txt", 'a', encoding='utf-8') as file_pc:
+        file_pc.write(f'{post} \n')
 
 def mostrar_resultados():
     print('これまでの結果')
-    with open("data.txt", "r") as read_file:
+    with open("data.txt", "r", encoding='utf-8') as read_file:
         print(read_file.read())
 
 def mostrar_menu():
