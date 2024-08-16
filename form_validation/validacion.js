@@ -3,7 +3,10 @@ function emailValidation() {
   const emailConfirm = document.getElementById('email_confirm');
   const form = document.getElementById('form');
 
+  // Añadir evento para la validación en tiempo real
   emailConfirm.addEventListener('input', validateEmails);
+
+  // Validar antes de enviar el formulario
   form.addEventListener('submit', (event) => {
     if (!validateEmails()) {
       event.preventDefault(); // Evita el envío si hay errores
